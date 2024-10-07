@@ -1,11 +1,12 @@
+import sqlite3
+import csv
+import os
 """
 Transforms and Loads data into the local SQLite3 database
 Example:
 dispatching_base_number,date,active_vehicles,trips
 """
-import sqlite3
-import csv
-import os
+
 
 #load the csv file and insert into a new sqlite3 database
 def load(dataset="data/Uber-Jan-Feb-FOIL.csv"):
