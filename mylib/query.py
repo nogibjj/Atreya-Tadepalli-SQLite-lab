@@ -6,7 +6,8 @@ def create_query(dispatch_number,date,vehicles,trips1):
     """Query the database to insert a new row within the Ubertrips table"""
     conn = sqlite3.connect("Ubertrips.db")
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO Ubertrips (?, ?, ?, ?)", (dispatch_number,date,vehicles,trips1))
+    cursor.execute("INSERT INTO Ubertrips (?, ?, ?, ?)", \
+    (dispatch_number,date,vehicles,trips1))
     conn.commit()
     conn.close()
     return "New row inserted successfully"
