@@ -8,7 +8,7 @@ def create_query(dispatch_number,date,vehicles,trips1):
     cursor = conn.cursor()
     """Create a new entry"""
     cursor.execute(
-        f"""
+        """
         INSERT INTO Ubertrips 
         (dispatch_number,date,active_vehicles,trips) 
         VALUES (?, ?, ?, ?)
