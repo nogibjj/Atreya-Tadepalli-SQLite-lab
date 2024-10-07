@@ -10,7 +10,7 @@ def create_query(dispatch_number,date,vehicles,trips1):
     cursor.execute(
         """
         INSERT INTO Ubertrips 
-        (dispatch_number,date,active_vehicles,trips) 
+        (dispatching_base_number,date,active_vehicles,trips) 
         VALUES (?, ?, ?, ?)
         """,
         (dispatch_number,date,vehicles,trips1),
@@ -35,7 +35,7 @@ def update_query(active_vehicles,trips, dispatching_base_number,date):
     """Update the records included within the Ubertrips database"""
     conn = sqlite3.connect("Ubertrips.db")
     cursor = conn.cursor()
-    cursor.execute("UPDATE Ubertrips SET active_vehicles=?, trips=?, \
+    cursor.execute("UPDATE Ubertrips SET active_vehicles=?, trips=? \
     WHERE dispatching_base_number = ? AND date = ?" , \
     (active_vehicles, trips, dispatching_base_number, date,))
     print("Data Update")
