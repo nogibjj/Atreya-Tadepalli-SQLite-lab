@@ -40,10 +40,10 @@ def delete_query(dispatching_base_number,date):
     conn = sqlite3.connect("Ubertrips.db")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM Ubertrips \
-                   WHERE (dispatching_base_number=? AND date=?)", (dispatching_base_number,date))
+    WHERE (dispatching_base_number=? AND date=?)", (dispatching_base_number,date))
     deleted = cursor.fetchall()
     cursor.execute("DELETE FROM Ubertrips \
-                   WHERE (dispatching_base_number=? AND date=?)", (dispatching_base_number,date))
+    WHERE (dispatching_base_number=? AND date=?)", (dispatching_base_number,date))
     conn.commit()
     print("Deleting data:")
     print(deleted)

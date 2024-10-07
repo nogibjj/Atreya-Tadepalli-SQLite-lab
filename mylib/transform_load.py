@@ -19,7 +19,8 @@ def load(dataset="data/Uber-Jan-Feb-FOIL.csv"):
     conn = sqlite3.connect('Ubertrips.db')
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS Ubertrips")
-    c.execute("CREATE TABLE Ubertrips (dispatching_base_number,date,active_vehicles,trips)")
+    c.execute("CREATE TABLE Ubertrips \
+    (dispatching_base_number,date,active_vehicles,trips)")
     #insert
     c.executemany("INSERT INTO Ubertrips VALUES (?,?, ?, ?)", payload)
     conn.commit()
