@@ -27,3 +27,6 @@ def load(dataset="data/Uber-Jan-Feb-FOIL.csv"):
     conn.close()
     return "Ubertrips.db"
 
+if __name__ == "__main__":
+    load()
+

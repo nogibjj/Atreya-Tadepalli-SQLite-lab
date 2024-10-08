@@ -58,4 +58,8 @@ def delete_query(dispatching_base_number,date):
     conn.close()
     return "Deleted successfully"
 
-
+if __name__ == "__main__":
+    create_query()
+    read_query()
+    update_query()
+    delete_query()
